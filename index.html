@@ -1,0 +1,163 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<table id = "t">
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+	<td>
+	</td>
+</tr>
+</table>
+<button id = "b1" onclick = "dropThing(1)"></button>
+<button id = "b2" onclick = "dropThing(2)"></button>
+<button id = "b3" onclick = "dropThing(3)"></button>
+<button id = "b4" onclick = "dropThing(4)"></button>
+<button id = "b5" onclick = "dropThing(5)"></button>
+<button id = "b6" onclick = "dropThing(6)"></button>
+<button id = "b7" onclick = "dropThing(7)"></button>
+<script>
+var redTurn = true;
+var table = document.getElementById("t");
+var tableString = "";
+var array = 
+var dropThing = function(col)
+{
+redTurn = !redTurn;
+console.log(redTurn);
+if(redTurn)
+{
+	document.getElementById("b1").style.background = "red";
+	document.getElementById("b2").style.background = "red";
+	document.getElementById("b3").style.background = "red";
+	document.getElementById("b4").style.background = "red";
+	document.getElementById("b5").style.background = "red";
+	document.getElementById("b6").style.background = "red";
+	document.getElementById("b7").style.background = "red";
+	console.log("red's turn");
+}
+else
+{
+	document.getElementById("b1").style.background = "blue";
+	document.getElementById("b2").style.background = "blue";
+	document.getElementById("b3").style.background = "blue";
+	document.getElementById("b4").style.background = "blue";
+	document.getElementById("b5").style.background = "blue";
+	document.getElementById("b6").style.background = "blue";
+	document.getElementById("b7").style.background = "blue";
+	console.log("blue's turn");
+}
+var row;
+for(var i = 5; i > 0; --i)
+{
+	if(array[i][col] != 1 && array[i][col] != 2)
+	{
+		row = i;
+	}
+}
+if(redTurn)
+array[row][col] = 1;
+else
+array[row][col] = 2;
+for(var r = 0; r < rows; ++r)
+{
+	tableString.append("<tr>");
+	for(var c = 0; c < columns; ++c)
+	{
+		tableString.append("<td>" + array[r][c] +"</td>");
+	}
+	tableString.append("</tr>");
+}
+table.innerHTML = tableString;
+}
+</script>
+</html>
