@@ -1,0 +1,17 @@
+table {
+	table-layout: auto;
+	border-collapse: collapse;
+}
+td { 
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	background-color: gray;
+	width: 100px;
+	height: 100px;
+}
+button {
+	width: 102px;
+	height: 15px;
+	background: red;
+}
